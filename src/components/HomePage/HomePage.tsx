@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import logo from "../../logo.svg";
+import "./HomePage.scss";
 
 export const HomePage: FC = () => {
   return (
