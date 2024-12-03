@@ -1,0 +1,28 @@
+.register {
+  display: flex;
+  padding: 20%;
+  form {
+    display: grid;
+    gap: 10px;
+    width: 50%;
+    border: 1px solid #c3cad8;
+    padding: 20px;
+    background-color: #c3cad8;
+    opacity: 0.9;
+    justify-items: center;
+    input {
+      height: 35px;
+      border-radius: 10px;
+      border: none;
+      width: -webkit-fill-available;
+    }
+    button {
+      width: 50%;
+      justify-content: center;
+      justify-items: center;
+      border-radius: 4px;
+      padding: 10px;
+      border: none;
+    }
+  }
+}
