@@ -11,7 +11,7 @@ export const App: FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/home" element={<HomePage age={26} />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </Router>
