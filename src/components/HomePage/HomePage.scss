@@ -1,39 +1,66 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+.homepage {
+  display: grid;
+  padding: 15px;
+  border: 2px solid black;
+  margin: 12px;
+}
+
+.homepage_content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 2px solid black;
+  margin: 12px;
+}
+
+.homepage_content p {
+  margin-bottom: 10px;
+}
+
+.homepage_content button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.homepage_content button:hover {
+  background-color: darkred;
+}
+
+.homepage_content button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.day-theme {
+  background-color: white;
+  color: black;
+}
+
+.night-theme {
+  background-color: black;
+  color: white;
+}
+
+.image-style {
+  width: 150px;
+  height: 150px;
+  padding: 8px;
+  opacity: 0.8; 
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+}

@@ -6,6 +6,7 @@ import {
   Routes,
 } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
+import  RegisterPage  from "./components/Register/RegisterPage";
 
 export const App: FC = () => {
   return (
@@ -13,6 +14,7 @@ export const App: FC = () => {
       <Routes>
         <Route path="/home" element={<HomePage />} />
         <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </Router>
   );
