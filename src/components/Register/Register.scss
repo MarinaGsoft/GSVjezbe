@@ -1,0 +1,25 @@
+
+.registration-page{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    justify-self: center;
+    justify-self: center;
+    width: 100%;
+    .registrationForm{
+    justify-content: center;
+    min-height: 50vh;
+    box-shadow: 2px 2px 2px 2px gray;
+        button{
+            width: 200px;
+            background-color: blue;
+            height: 30px;
+            border: none;
+            box-shadow: 2px 2px grey;
+            color: white;
+
+        }
+    }
+}
