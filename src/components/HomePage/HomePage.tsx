@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import "./HomePage.scss";
+import { useNavigate } from "react-router-dom";
 
 type HomePageProps = {
   age?: number;
@@ -8,6 +9,13 @@ export const HomePage: FC<HomePageProps> = ({ age = 18 }) => {
   const [diseable, setDisable] = useState(false);
   const [count, setCount] = useState(0);
   const [theme, setTheme] = useState("day");
+  const [name, setName] = useState("");
+  const [inputName, setInputName] = useState("");
+  const [formInputName, setFormInputName] = useState("");
+
+  const navigate = useNavigate();
+
+  let brojac = 0;
 
   const currentDate = new Date().toLocaleDateString();
   const currentTime = new Date().toLocaleTimeString();
@@ -23,6 +31,29 @@ export const HomePage: FC<HomePageProps> = ({ age = 18 }) => {
   };
   const toggleTheme = () => {
     setTheme(theme === "day" ? "night" : "day");
+  };
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const handleBrojac = () => {
+    brojac++;
+    if (brojac >= 5) {
+      console.log("Kliknuli ste više od 5 puta!");
+    }
+  };
+
+  const handleForm = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    setFormInputName(inputName);
+  };
+
+  const handleFormInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputName(e.target.value);
+  };
+
+  const handleRegister = () => {
+    navigate("/register");
   };
   return (
     <div className="homepage">
@@ -69,6 +100,45 @@ export const HomePage: FC<HomePageProps> = ({ age = 18 }) => {
             Promijeni u {theme === "day" ? "night" : "day"}
           </button>
         </div>
+      </div>
+      <div className="homepage__content">
+        <p>7.vježba</p>
+        <input
+          type="text"
+          placeholder="Unesite svoje ime"
+          onChange={handleInputChange}
+        ></input>
+        <p>Dobrodošli {name}</p>
+      </div>
+      <div className="homepage__content">
+        <p>8.vježba</p>
+        <button onClick={handleBrojac}>Klikni me!</button>
+      </div>
+      <div className="homepage__content">
+        <p>9.vježba</p>
+        <form onSubmit={handleForm}>
+          <label htmlFor="name">Ime:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            onChange={handleFormInputChange}
+          />
+          <button type="submit">Pošalji</button>
+          <p>Pozdrav {formInputName}</p>
+        </form>
+      </div>
+      <div className="homepage__content">
+        <p>10.vježba</p>
+        <img
+          src="https://particle.scitech.org.au/wp-content/uploads/2022/12/GettyImages-1203853320-2048x1116.jpg"
+          alt="slika"
+          className="homepage__content__img"
+        />
+      </div>
+      <p>12.vježba</p>
+      <div>
+        <button onClick={handleRegister}>Register</button>
       </div>
     </div>
   );
