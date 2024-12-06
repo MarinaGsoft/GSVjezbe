@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import "./HomePage.scss";
-import Images from "../../images/Images";
 import { useNavigate } from "react-router-dom";
+import Images from "../images/Images";
 
 type HomePageProps = {
   age?: number;
